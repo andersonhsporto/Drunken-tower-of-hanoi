@@ -7,10 +7,6 @@
 #include "Player.hpp"
 #include "Disk.hpp"
 
-void freePlayer(Player *player) {
-  delete player;
-}
-
 int drunkenTowerOfHanoi(int discs, int tiles, int rodA, int rodB, int rodC, int trials) {
   int sumNumOfTurns = 0;
   Player *player;

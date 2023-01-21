@@ -1,9 +1,9 @@
 NAME	= DrunkHanoi
 
 CC		= c++
-CFLAGS	= -Wall -Wextra #-Werror
+CFLAGS	= -Wall -Wextra -Werror
 INCLUDE =	-I ./
-HEADERS	= main.cpp
+HEADERS	= Disk.hpp Player.hpp
 
 SRC		= main.cpp Disk.cpp Player.cpp
 

@@ -37,7 +37,6 @@ class Player {
   Disk *currentDisk;
   int numOfTurns;
 
-
 };
 
 #endif //DRUNK_HANOI__PLAYER_HPP_

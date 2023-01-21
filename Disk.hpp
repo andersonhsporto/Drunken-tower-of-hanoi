@@ -21,7 +21,7 @@ class Disk {
 
   bool compare(Disk disc2) const;
 
- int getSize() const;
+  int getSize() const;
  private:
   int size;
 };

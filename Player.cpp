@@ -91,6 +91,6 @@ void Player::solve(int discs, int rodA, int rodB, int rodC, int tiles, std::stac
 }
 
 Disk *Player::getCurrentDisk() {
-    return this->currentDisk;
+  return this->currentDisk;
 }
 

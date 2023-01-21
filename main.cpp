@@ -46,7 +46,7 @@ int main() {
   std::cout << "(2,5,1,3,5) has to be 60 and it is: ";
   std::cout << drunkenTowerOfHanoi(2, 5, 1, 3, 5, 10000) << std::endl;
 
-//  std::cout << "(3,20,4,9,17) has to be 2358 and it is: ";
-//  std::cout << drunkenTowerOfHanoi(3, 20, 4, 9, 17, 100001) << std::endl;
+  std::cout << "(3,20,4,9,17) has to be 2358 and it is: ";
+  std::cout << drunkenTowerOfHanoi(3, 20, 4, 9, 17, 100001) << std::endl;
   return 0;
 }

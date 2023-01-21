@@ -1,4 +1,4 @@
-# Druken Tower of Hanoi
+# Drunken Tower of Hanoi
 
 Simple implementation of the [Drunken Tower of Hanoi](https://projecteuler.net/problem=497)  problem in C++.
 

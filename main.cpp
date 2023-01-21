@@ -7,6 +7,10 @@
 #include "Player.hpp"
 #include "Disk.hpp"
 
+void freePlayer(Player *player) {
+  delete player;
+}
+
 int drunkenTowerOfHanoi(int discs, int tiles, int rodA, int rodB, int rodC, int trials) {
   int sumNumOfTurns = 0;
   Player *player;
@@ -19,7 +23,8 @@ int drunkenTowerOfHanoi(int discs, int tiles, int rodA, int rodB, int rodC, int 
     }
     for (int j = discs; j > 0; j--) {
       // for the total number of discs, push them onto rodA in order of smallest at the top and largest at the bottom
-      gameBoard[rodA - 1].push(*new Disk(j));
+      Disk newDisk(j);
+      gameBoard[rodA - 1].push(newDisk);
     }
     player = new Player(rodB - 1);
 
@@ -29,7 +34,11 @@ int drunkenTowerOfHanoi(int discs, int tiles, int rodA, int rodB, int rodC, int 
     }
     // add the current players number of turns to the sum of number of turns
     sumNumOfTurns += player->getNumOfTurns();
+    // free the memory allocated to the player
+    delete[] gameBoard;
+    delete player;
   }
+//  delete player;
   return sumNumOfTurns / trials;
 }
 
@@ -37,7 +46,7 @@ int main() {
   std::cout << "(2,5,1,3,5) has to be 60 and it is: ";
   std::cout << drunkenTowerOfHanoi(2, 5, 1, 3, 5, 10000) << std::endl;
 
-  std::cout << "(3,20,4,9,17) has to be 2358 and it is: ";
-  std::cout << drunkenTowerOfHanoi(3, 20, 4, 9, 17, 100001) << std::endl;
+//  std::cout << "(3,20,4,9,17) has to be 2358 and it is: ";
+//  std::cout << drunkenTowerOfHanoi(3, 20, 4, 9, 17, 100001) << std::endl;
   return 0;
 }

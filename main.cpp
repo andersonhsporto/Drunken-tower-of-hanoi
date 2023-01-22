@@ -2,8 +2,8 @@
 // Created by anderson on 20/01/23.
 //
 
-#include <stack>
 #include <iostream>
+#include <stack>
 #include <cmath>
 #include "Player.hpp"
 #include "Disk.hpp"
@@ -31,11 +31,10 @@ int drunkenTowerOfHanoi(int discs, int tiles, int rodA, int rodB, int rodC, int 
     }
     // add the current players number of turns to the sum of number of turns
     sumNumOfTurns += player->getNumOfTurns();
-    // free the memory allocated to the player
+    // free the memory allocated in loop
     delete[] gameBoard;
     delete player;
   }
-//  delete player;
   return sumNumOfTurns / trials;
 }
 

@@ -48,22 +48,20 @@ long simpleSolver(int n, int k, int a, int b, int c) {
 
 long problemSolver(long k, long a, long b, long c) {
   long total_awaited_number = 0;
-  long temp = 1;
   long previous = 0;
   long current = 1;
-  long mod2 = pow(10, 9);
+  long mod = pow(10, 9);
 
-  while (temp < 10001) {
-    long long awaited_number = ((2 * current * (c - a) * (k - 1)) - ((2 * k - b - c) * (c - b))) % mod2;
-    total_awaited_number = (total_awaited_number + awaited_number) % mod2;
-    long old = (current + (2 * previous) + 1) % mod2;
+  for (int temp = 1; temp <= 10000; temp++) {
+    long awaited_number = ((2 * current * (c - a) * (k - 1)) - ((2 * k - b - c) * (c - b))) % mod;
+    total_awaited_number = (total_awaited_number + awaited_number) % mod;
+    long old = (current + (2 * previous) + 1) % mod;
     previous = current;
     current = old;
-    k = (k * 10) % mod2;
-    a = (a * 3) % mod2;
-    b = (b * 6) % mod2;
-    c = (c * 9) % mod2;
-    temp++;
+    k = (k * 10) % mod;
+    a = (a * 3) % mod;
+    b = (b * 6) % mod;
+    c = (c * 9) % mod;
   }
   return total_awaited_number;
 }

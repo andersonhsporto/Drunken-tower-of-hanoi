@@ -63,7 +63,7 @@ long problemSolver(long k, long a, long b, long c) {
     a = (a * 3) % mod2;
     b = (b * 6) % mod2;
     c = (c * 9) % mod2;
-    temp = temp + 1;
+    temp++;
   }
   return total_awaited_number;
 }
